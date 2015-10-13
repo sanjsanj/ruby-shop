@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <% @products.each do |product| %>
+      <div class="itemContainer col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+        <img src=<%= product[:image] %> alt=<%= product[:name] %>>
+
+        <h3><div class="productName">
+          <%= product[:name] %>
+        </div></h3>
+
+        <h6><div class="productCategory">
+          <%= product[:category] %>
+        </div></h6>
+
+        <h3><div class="productPrice">
+          £<%= sprintf('%.2f', product[:price]) %>
+        </div></h3>
+
+        <% if product[:stock] > 0 %>
+          <button value="Buy" class="buyButton btn btn-primary">Buy</button>
+        <% else %>
+          <button value="Sold out" class="soldOutButton btn btn-default" disabled>Sold out</button>
+        <% end %>
+
+      </div>
+    <% end %>
+
+  </div>
+</div>
