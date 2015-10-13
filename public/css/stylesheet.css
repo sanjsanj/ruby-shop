@@ -1,0 +1,69 @@
+body {
+  background-color: grey;
+  padding-top: 4em;
+}
+
+.title {
+  position: absolute;
+  text-decoration: none;
+  top: 0.5em;
+}
+
+.cartButton {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+}
+
+.itemContainer {
+  position: relative;
+  height: 32em;
+  margin: 0.5em 0;
+  border-radius: 0.7em;
+  background-color: white;
+  border: 0.5em solid grey;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  /*height: 100%;*/
+}
+
+.productName {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  left: 1em;
+  top: 12em;
+  padding-right: 1em;
+}
+
+.productCategory {
+  position: absolute;
+  left: 2em;
+  bottom: 5em;
+}
+
+.productPrice {
+  position: absolute;
+  left: 1em;
+  bottom: 0.75em;
+}
+
+.oldProductPrice {
+  position: absolute;
+  left: 5.6em;
+  bottom: 1.0em;
+  opacity: 0.4;
+  text-decoration: line-through;
+  font-size: 80%;
+}
+
+.buyButton, .soldOutButton {
+  position: absolute;
+  width: 40%;
+  right: 1em;
+  bottom: 1em;
+}
