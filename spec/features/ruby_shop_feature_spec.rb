@@ -6,7 +6,7 @@ feature 'Feature - The Ruby-Shop homepage' do
   # As a User I can add a product to my shopping cart.
   scenario 'allows single quantity of a product to be added to the shopping cart' do
     all('.itemContainer')[0].click_on 'Buy'
-    expect(page).to have_css '.cartTotal', '99.00'
+    expect(page).to have_css('.cartTotal', text: '99.00')
     # text: sprintf('%.2f', cart_total)
   end
 

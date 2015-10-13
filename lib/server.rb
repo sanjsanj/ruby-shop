@@ -1,7 +1,4 @@
 require 'sinatra/base'
-require 'sinatra/partial'
-# require 'sinatra/json'
-
 require_relative 'models/shop'
 
 class RubyShop < Sinatra::Base
@@ -11,7 +8,12 @@ class RubyShop < Sinatra::Base
   set :public_folder, proc { File.join(root, '..', 'public') }
 
   set :session_secret, 'super secret'
-  set :partial_template_engine, :erb
+
+  helpers do
+    def partial template, locals = {}
+      erb template, :locals => locals
+    end
+  end
 
   get '/' do
     @shop ||= Shop.new
