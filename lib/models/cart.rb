@@ -5,7 +5,7 @@ class Cart
     @products = []
   end
 
-  def add_item item
-
+  def add_item(item)
+    item
   end
 end
