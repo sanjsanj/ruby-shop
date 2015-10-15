@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'models/products'
+require_relative 'models/cart'
 require_relative 'models/shop'
 
 class RubyShop < Sinatra::Base
@@ -10,13 +12,13 @@ class RubyShop < Sinatra::Base
   set :session_secret, 'super secret'
 
   helpers do
-    def partial template, locals = {}
+    def partial(template, locals = {})
       erb template, :locals => locals
     end
   end
 
   get '/' do
-    @shop ||= Shop.new
+    @shop ||= Shop.new(cart: Cart.new, products: Products.data)
     @products = @shop.products
     erb :index
   end

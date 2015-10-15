@@ -8,7 +8,9 @@
 
       <h3><a href="/cart">
         <span class="cartButton navbar-right glyphicon glyphicon-shopping-cart">
+        <% if @cart_total %>
           £<span class="cartTotal"><%= @cart_total %></span> Cart
+        <% end %>
         </span>
       </a></h3>
 

@@ -1,7 +1,9 @@
 <div class="container-fluid">
   <div class="row">
+
     <% @products.each do |product| %>
       <%= partial :_product, { product: product } %>
     <% end %>
+
   </div>
 </div>
