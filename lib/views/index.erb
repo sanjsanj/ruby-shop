@@ -2,7 +2,7 @@
   <div class="row">
 
     <% @products.each do |product| %>
-      <%= partial :_product, { product: product } %>
+      <%= partial(template: :_product, locals: { product: product }) %>
     <% end %>
 
   </div>

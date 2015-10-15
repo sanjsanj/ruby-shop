@@ -12,8 +12,8 @@ class RubyShop < Sinatra::Base
   set :session_secret, 'super secret'
 
   helpers do
-    def partial(template, locals = {})
-      erb template, :locals => locals
+    def partial(template:, locals: {})
+      erb(template, locals: locals)
     end
   end
 
