@@ -8,4 +8,8 @@ class Cart
   def add_item(item)
     item
   end
+
+  def total
+    0
+  end
 end

@@ -1,7 +1,6 @@
 require 'models/shop'
 
 describe Shop do
-  # context 'When initialized' do
   it 'has products' do
     expect(subject.products).not_to be_empty
   end
@@ -14,5 +13,4 @@ describe Shop do
     subject.add_to_cart_by_id(1)
     expect(subject.cart.products).to include(item_1)
   end
-  # end
 end

@@ -18,8 +18,9 @@ class RubyShop < Sinatra::Base
   end
 
   get '/' do
-    @shop ||= Shop.new(cart: Cart.new, products: Products.data)
-    @products = @shop.products
+    shop ||= Shop.new
+    @products = shop.products
+    @cart_total = shop.cart_total
     erb :index
   end
 
