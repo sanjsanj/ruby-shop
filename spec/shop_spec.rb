@@ -10,7 +10,15 @@ describe Shop do
   end
 
   it 'can add a product to the cart' do
-    subject.add_to_cart_by_id(1)
-    expect(subject.cart_products).to include(item_1)
+    item_id = 1
+    subject.add_to_cart(id: item_id)
+    expect(subject.cart_products.first['id']).to eq item_id
+  end
+
+  it 'can add multiples of a product to the cart' do
+    item_id = 1
+    subject.add_to_cart(id: item_id)
+    subject.add_to_cart(id: item_id)
+    expect(subject.cart_products.first['cart_quantity']).to eq 2
   end
 end

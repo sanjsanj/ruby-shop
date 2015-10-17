@@ -6,7 +6,7 @@ require_relative 'models/cart'
 require_relative 'models/shop'
 
 class RubyShop < Sinatra::Base
-  helpers Helpers
+  helpers ServerHelpers
 
   enable :sessions
 

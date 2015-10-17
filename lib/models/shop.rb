@@ -10,10 +10,8 @@ class Shop
     @cart = cart
   end
 
-  def add_to_cart_by_id(id)
-    item = products.select { |product| product[:id] == id.to_i }
-    cart.add_item(item)
-    # products.decrement_shop_quantity(item)
+  def add_to_cart(id:)
+    cart.add_item(id: id)
   end
 
   def cart_products

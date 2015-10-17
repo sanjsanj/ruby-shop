@@ -8,8 +8,10 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     extlib (0.9.16)
     highline (1.7.8)
+    json (1.8.3)
     mime-types (2.6.2)
     mini_portile (0.6.2)
     nokogiri (1.6.6.2)
@@ -23,6 +25,11 @@ GEM
       templater (>= 1.0.0)
     shotgun (0.9.1)
       rack (>= 1.0)
+    simplecov (0.10.0)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -44,6 +51,7 @@ DEPENDENCIES
   capybara
   rspec-sinatra
   shotgun
+  simplecov
   sinatra
   sinatra-partial
 

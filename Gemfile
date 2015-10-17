@@ -7,4 +7,5 @@ group :development, :test do
   gem 'capybara'
   gem 'rspec-sinatra'
   gem 'shotgun'
+  gem 'simplecov', require: false, group: :test
 end

@@ -4,6 +4,7 @@ class Products
     JSON.parse(file)
   end
 
-  def self.decrement_shop_quantity(item)
+  def self.find(id:)
+    data.find { |product| product['id'] == id.to_i }
   end
 end

@@ -37,4 +37,8 @@ describe Products do
       expect(product_1['cart_quantity'].class).to be Fixnum
     end
   end
+
+  it 'can find a product by id' do
+    expect(Products.find(id: 1)).to eq product_1
+  end
 end
