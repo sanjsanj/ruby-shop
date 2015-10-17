@@ -7,5 +7,14 @@
     "price": 99.00,
     "shop_quantity": 5,
     "cart_quantity": 0
+  },
+  {
+    "id": 2,
+    "name": "Suede Shoes, Blue",
+    "category": "Women's Footwear",
+    "image": "http://shoeslisthqa.com/imges/a2.zassets.com/images/z/2/3/7/3/0/9/2373094-p-MULTIVIEW.jpg",
+    "price": 42.00,
+    "shop_quantity": 4,
+    "cart_quantity": 0
   }
 ]

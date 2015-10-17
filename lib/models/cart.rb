@@ -7,11 +7,12 @@ class Cart
 
   def add_item(id:)
     cart_contains_item?(id: id) ? increment_quantity(id: id) : add_to_cart(id: id)
-    p products
   end
 
   def total
-    0
+    products.inject(0) do |sum, product|
+      sum += (product['price'] * product['cart_quantity'])
+    end
   end
 
   private
