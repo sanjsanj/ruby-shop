@@ -11,6 +11,6 @@ describe Shop do
 
   it 'can add a product to the cart' do
     subject.add_to_cart_by_id(1)
-    expect(subject.cart.products).to include(item_1)
+    expect(subject.cart_products).to include(item_1)
   end
 end

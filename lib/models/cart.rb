@@ -6,7 +6,7 @@ class Cart
   end
 
   def add_item(item)
-    item
+    products << item
   end
 
   def total

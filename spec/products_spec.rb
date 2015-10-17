@@ -1,3 +1,5 @@
+require 'models/products'
+
 describe Products do
   let(:products) { Products.data(data: 'products_mock.json') }
   let(:product_1) { products.first }

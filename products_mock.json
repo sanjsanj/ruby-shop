@@ -1,11 +1,11 @@
 [
   {
-    "id": 99,
+    "id": 1,
     "name": "Almond Toe Court Shoes, Patent Black",
     "category": "Women's Footwear",
     "image": "http://www.frugalfashiondiva.co.uk/wp-content/uploads/2010/08/Nine-West-Rocha-Black-Court-Shoes.jpg",
-    "price": 222.00,
-    "shop_quantity": 99,
+    "price": 99.00,
+    "shop_quantity": 5,
     "cart_quantity": 0
   }
 ]
