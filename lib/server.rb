@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'helpers/server_helpers'
+require_relative 'helpers/server_helpers'
 
 require_relative 'models/products'
 require_relative 'models/cart'
@@ -18,8 +18,17 @@ class RubyShop < Sinatra::Base
   get '/' do
     shop ||= Shop.new
     @products = shop.products
-    @cart_total = shop.cart_total
+    cart = shop.cart
+    session[:cart_total] = shop.cart_total
     erb :index
+  end
+
+  get '/cart' do
+    erb :cart
+  end
+  
+  post '/cart' do
+    erb :cart
   end
 
   run! if app_file == $PROGRAM_NAME
