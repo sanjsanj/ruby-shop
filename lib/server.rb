@@ -10,25 +10,28 @@ class RubyShop < Sinatra::Base
 
   enable :sessions
 
+  shop = Shop.new
+  cart = shop.cart
+
   set :views, proc { File.join(root, 'views') }
   set :public_folder, proc { File.join(root, '..', 'public') }
 
   set :session_secret, 'super secret'
 
   get '/' do
-    shop ||= Shop.new
+    @cart_total = shop.cart_total
     @products = shop.products
-    cart = shop.cart
-    session[:cart_total] = shop.cart_total
     erb :index
   end
 
   get '/cart' do
+    @cart_total = shop.cart_total
     erb :cart
   end
   
   post '/cart' do
-    erb :cart
+    shop.add_to_cart(id: params[:product_id].to_i)
+    redirect to '/cart'
   end
 
   run! if app_file == $PROGRAM_NAME

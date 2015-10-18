@@ -24,7 +24,10 @@
   <% end %>
 
   <% if product['shop_quantity'] > 0 %>
-    <button value="Buy" class="buyButton btn btn-primary">Buy</button>
+    <form method="post" action="/cart">
+    <input type="hidden" name="product_id" value="<%= product['id'] %>">
+      <button type="submit" value="Buy" class="buyButton btn btn-primary">Buy</button>
+    </form>
   <% else %>
     <button value="Sold out" class="soldOutButton btn btn-default" disabled>Sold out</button>
   <% end %>
