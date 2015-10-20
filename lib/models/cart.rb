@@ -15,6 +15,8 @@ class Cart
     end
   end
 
+  private
+
   def cart_contains_item?(item:)
     products.find { |product| product['id'] == item['id'] }
   end

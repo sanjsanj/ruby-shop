@@ -14,12 +14,12 @@
   </div></h6>
 
   <h3><div class="productPrice">
-    £<%= sprintf('%.2f', product['price']) %>
+    £<%= format('%.2f', product['price']) %>
   </div></h3>
 
   <% if product['old_price'] %>
     <h3><div class="oldProductPrice">
-      £<%= sprintf('%.2f', product['old_price']) %>
+      £<%= format('%.2f', product['old_price']) %>
     </div></h3>
   <% end %>
 

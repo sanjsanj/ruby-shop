@@ -11,13 +11,13 @@ feature 'Feature - The Ruby-Shop homepage' do
   scenario 'allows a product to be added to the cart' do
     cart_total = item_1['price']
     all('.itemContainer')[0].click_on 'Buy'
-    expect(page).to have_css('.cartTotal', text:  sprintf('%.2f', cart_total))
+    expect(page).to have_css('.cartTotal', text:  format('%.2f', cart_total))
   end
 
   scenario 'allows multiples of a product to be added to the cart' do
     cart_total = (item_1['price'] * 2)
     all('.itemContainer')[0].click_on 'Buy'
-    expect(page).to have_css('.cartTotal', text:  sprintf('%.2f', cart_total))
+    expect(page).to have_css('.cartTotal', text:  format('%.2f', cart_total))
   end
 
   scenario 'allows multiples of multiple products to be added to the cart' do
@@ -25,12 +25,18 @@ feature 'Feature - The Ruby-Shop homepage' do
     all('.itemContainer')[-1].click_on 'Buy'
     click_on('Ruby Shop')
     all('.itemContainer')[-1].click_on 'Buy'
-    expect(page).to have_css('.cartTotal', text:  sprintf('%.2f', cart_total))
+    expect(page).to have_css('.cartTotal', text:  format('%.2f', cart_total))
   end
 
   # As a User I am unable to add Out of Stock products to the shopping cart.
   scenario 'does not allow out of stock products to be added to the cart' do
-    expect(page).to have_button "Sold out", disabled: true
+    item_quantity = item_1['shop_quantity']
+    #item_quantity.times do
+      #all('.itemContainer')[0].click_on 'Buy'
+      #visit '/'
+    #end
+    all('.itemContainer')[0].click_on 'Buy'
+    expect(all('.itemContainer')[0]).to have_button "Sold out", disabled: true
   end
 end
 

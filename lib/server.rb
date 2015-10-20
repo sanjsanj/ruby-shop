@@ -25,6 +25,7 @@ class RubyShop < Sinatra::Base
 
   get '/cart' do
     @cart_total = shop.cart_total
+    @products = shop.shop_products
     erb :cart
   end
   
