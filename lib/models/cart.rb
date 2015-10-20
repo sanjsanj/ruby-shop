@@ -5,8 +5,8 @@ class Cart
     @products = []
   end
 
-  def add_item(id:)
-    cart_contains_item?(id: id) ? increment_quantity(id: id) : add_to_cart(id: id)
+  def add_item(item:)
+    cart_contains_item?(item: item) ? increment_quantity(item: item) : add_to_cart(item: item)
   end
 
   def total
@@ -15,19 +15,17 @@ class Cart
     end
   end
 
-  private
-
-  def cart_contains_item?(id:)
-    products.find { |product| product['id'] == id }
+  def cart_contains_item?(item:)
+    products.find { |product| product['id'] == item['id'] }
   end
 
-  def increment_quantity(id:)
-    product = products.find { |product| product['id'] == id }
+  def increment_quantity(item:)
+    product = products.find { |product| product['id'] == item['id'] }
     product['cart_quantity'] += 1
   end
 
-  def add_to_cart(id:)
-    products << Products.find(id: id)
-    increment_quantity(id: id)
+  def add_to_cart(item:)
+    products << item
+    increment_quantity(item: item)
   end
 end

@@ -1,11 +1,11 @@
 require 'models/products'
 
 describe Products do
-  let(:products) { Products.data(data: 'products_mock.json') }
-  let(:product_1) { products.first }
+  let(:products) { Products.new }
+  let(:product_1) { products.data[0] }
 
   it 'contains data' do
-    expect(products).not_to be_nil
+    expect(products.data).not_to be_nil
   end
 
   context 'Data has' do
@@ -39,6 +39,11 @@ describe Products do
   end
 
   it 'can find a product by id' do
-    expect(Products.find(id: 1)).to eq product_1
+    expect(products.find(id: 0)).to eq product_1
+  end
+
+  it "can decrement a product's shop_quantity" do
+    products.decrement_stock(id: 0)
+    expect(products.data[0]['shop_quantity']).to eq 4
   end
 end

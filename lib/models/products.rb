@@ -1,10 +1,18 @@
 class Products
-  def self.data(data: 'products.json')
+  def initialize(data: 'products.json')
     file = File.read(data)
-    JSON.parse(file)
+    @instance_data = JSON.parse(file)
   end
 
-  def self.find(id:)
-    data.find { |product| product['id'] == id.to_i }
+  def data
+    @instance_data
+  end
+
+  def find(id:)
+    @instance_data.find { |product| product['id'] == id.to_i }
+  end
+
+  def decrement_stock(id:)
+    @instance_data[id]['shop_quantity'] -= 1
   end
 end
