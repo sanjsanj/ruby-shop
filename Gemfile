@@ -8,4 +8,5 @@ group :development, :test do
   gem 'rspec-sinatra'
   gem 'shotgun'
   gem 'simplecov', require: false, group: :test
+  gem 'launchy'
 end

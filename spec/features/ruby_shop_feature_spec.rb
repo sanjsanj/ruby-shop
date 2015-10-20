@@ -35,7 +35,10 @@ feature 'Feature - The Ruby-Shop homepage' do
       #all('.itemContainer')[0].click_on 'Buy'
       #visit '/'
     #end
-    all('.itemContainer')[0].click_on 'Buy'
+    3.times do
+      all('.itemContainer')[0].click_on 'Buy'
+      visit '/'
+    end
     expect(all('.itemContainer')[0]).to have_button "Sold out", disabled: true
   end
 end
