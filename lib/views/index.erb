@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
 
-    <% @products.each do |product| %>
+    <% session[:products].each do |product| %>
       <%= partial(template: :_product, locals: { product: product }) %>
     <% end %>
 

@@ -30,7 +30,7 @@ feature 'Feature - The Ruby-Shop homepage' do
 
   # As a User I am unable to add Out of Stock products to the shopping cart.
   scenario 'does not allow out of stock products to be added to the cart' do
-    item_quantity = item_1['shop_quantity']
+    #item_quantity = item_1['shop_quantity']
     #item_quantity.times do
       #all('.itemContainer')[0].click_on 'Buy'
       #visit '/'
@@ -39,7 +39,7 @@ feature 'Feature - The Ruby-Shop homepage' do
       all('.itemContainer')[0].click_on 'Buy'
       visit '/'
     end
-    expect(all('.itemContainer')[0]).to have_button "Sold out", disabled: true
+    expect(all('.itemContainer')[0]).not_to have_button "Buy"
   end
 end
 

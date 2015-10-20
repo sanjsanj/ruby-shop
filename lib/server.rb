@@ -8,24 +8,24 @@ require_relative 'models/shop'
 class RubyShop < Sinatra::Base
   helpers ServerHelpers
 
-  #enable :sessions
-  #set :session_secret, 'super secret'
+  enable :sessions
+  set :session_secret, 'super secret'
 
-  shop = Shop.new
+  shop ||= Shop.new
   cart = shop.cart
 
   set :views, proc { File.join(root, 'views') }
   set :public_folder, proc { File.join(root, '..', 'public') }
 
   get '/' do
-    @cart_total = shop.cart_total
-    @products = shop.shop_products
+    session[:cart_total] = shop.cart_total
+    session[:products] = shop.shop_products
     erb :index
   end
 
   get '/cart' do
-    @cart_total = shop.cart_total
-    @products = shop.shop_products
+    session[:cart_total] = shop.cart_total
+    session[:products] = shop.shop_products
     erb :cart
   end
   
