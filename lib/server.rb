@@ -1,12 +1,12 @@
 require 'sinatra/base'
-require_relative 'helpers/server_helpers'
+require_relative 'helpers'
 
 require_relative 'models/products'
 require_relative 'models/cart'
 require_relative 'models/shop'
 
 class RubyShop < Sinatra::Base
-  helpers ServerHelpers
+  helpers PartialHelper
 
   enable :sessions
   set :session_secret, 'super secret'
